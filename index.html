@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="This website rates your singing in real time"/>
+	<meta name="author" content="Matthew Molino"/>
+
+    <title>Voice Rater</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- My Custom CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+
+    <link rel="icon" href="titleimage.png">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+  	<!-- Record button -->
+    <div class="buttoncontainer">
+    	<div class="recordbutton">
+  			<button id="recButton"></button>
+  		</div>
+	</div>
+	<!-- Song search list -->
+	<div  class='col-md-12'>
+        <div class="input-group input-group-lg">
+            <input id="songSearch" type="text" class="form-control" placeholder="Search for...">
+                <span class="input input-group-btn">
+                    <button id ="goButton" class="btn btn-default"  type="button">Search</button>
+                </span>
+        </div>                  
+	</div>
+	<div class="real_waveform">
+		
+	</div>
+	<div class="your_waveform">
+
+	</div>
+
+	<!-- Javascript functions -->
+    <script type="text/javascript" src="functions.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
