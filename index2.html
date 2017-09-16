@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta name="description" content="This website rates your singing in real time"/>
-  <meta name="author" content="Matthew Molino"/>
+	<meta name="author" content="Matthew Molino"/>
 
     <title>Voice Rater</title>
 
@@ -18,7 +18,19 @@
 
   </head>
   <body>
-    
+    <div class="luploadbutton">
+		<input type="file" id="lbrowse" name="fileupload" style="display: none" onChange="Handlechange('l');"/>
+		<input type="text" id="lfilename" readonly="true"/>
+		<input type="button" value="Click to select file" id="fakeBrowse" onclick="HandleBrowseClick('l');"/>
+	</div>
+	<div class="ruploadbutton">
+		<input type="file" id="rbrowse" name="fileupload" style="display: none" onChange="Handlechange('r');"/>
+		<input type="text" id="rfilename" readonly="true"/>
+		<input type="button" value="Click to select file" id="fakeBrowse" onclick="HandleBrowseClick('r');"/>
+	</div>
+	<div class="comparebutton">
+		<input type="button" value="Compare" id="comp" onclick="CompareAndPlayMusic();"/>
+	</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
