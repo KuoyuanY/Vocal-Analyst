@@ -35,6 +35,8 @@ def getAndDrawWaveform(file, color, figure):
 def getWaveform():
     rate, data = wav.read('Music Sample/White Rabbit.wav', True)
     data = toMono(data)
+    for thingamabob in data:
+        print(thingamabob)
     t = np.arange(len(data[:, 0])) * 1.0 / rate
     return data
 
@@ -90,8 +92,8 @@ def compareWavesGraph(fileMaster, fileUser):
     getWaveform()
 
 
-compareWavesGraph('Music Sample/ShortRabbit.wav', 'Music Sample/ShortRabbit.wav')
-
+# compareWavesGraph('Music Sample/ShortRabbit.wav', 'Music Sample/ShortRabbit.wav')
+getWaveform()
 
 
 
