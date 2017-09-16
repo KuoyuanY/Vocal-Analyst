@@ -2,7 +2,11 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
+<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="Python 3.6.1 (C:\Users\Larry\Miniconda3\python.exe)" jdkType="Python SDK" />
+=======
+    <orderEntry type="jdk" jdkName="Python 3.6.2 (C:\Users\power\AppData\Local\Programs\Python\Python36-32\python.exe)" jdkType="Python SDK" />
+>>>>>>> 838ecdb9eece3dd93281f1355c5d8a79d9213462
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
