@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pyaudio
 import time
+import scipy.fftpack
 
 
 
@@ -33,10 +34,10 @@ def getAndDrawWaveform(file, color, figure):
 
 
 def getWaveform():
-    rate, data = wav.read('Music Sample/White Rabbit.wav', True)
+    rate, data = wav.read('Music Sample/ShortRabbit.wav', True)
     data = toMono(data)
-    for thingamabob in data:
-        print(thingamabob)
+    # for thingamabob in data:
+    #     print(thingamabob)
     t = np.arange(len(data[:, 0])) * 1.0 / rate
     return data
 
@@ -93,7 +94,8 @@ def compareWavesGraph(fileMaster, fileUser):
 
 
 # compareWavesGraph('Music Sample/ShortRabbit.wav', 'Music Sample/ShortRabbit.wav')
-getWaveform()
+print(np.fft.fft(getWaveform()))
+print(len(np.fft.fft(getWaveform())))
 
 
 
