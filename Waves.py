@@ -85,9 +85,9 @@ def stream():
 
 # getAndDrawWaveform()
 def compareWavesGraph(fileMaster, fileUser):
-    (getAndDrawWaveform(fileMaster, 'r--', 1))
+    getAndDrawWaveform(fileMaster, 'r--', 1)
     getAndDrawWaveform(fileUser, 'b--', 2)
-
+    getWaveform()
 
 
 compareWavesGraph('Music Sample/ShortRabbit.wav', 'Music Sample/ShortRabbit.wav')
