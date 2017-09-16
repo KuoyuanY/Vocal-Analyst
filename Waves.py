@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import pyaudio
 import time
 import scipy.fftpack
+from pylab import*
 
 
 
@@ -39,7 +40,7 @@ def getWaveform():
     # for thingamabob in data:
     #     print(thingamabob)
     t = np.arange(len(data[:, 0])) * 1.0 / rate
-    return data
+    return data, rate
 
 
 def getCount():
@@ -93,12 +94,45 @@ def compareWavesGraph(fileMaster, fileUser):
     getWaveform()
 
 
+
+
 # compareWavesGraph('Music Sample/ShortRabbit.wav', 'Music Sample/ShortRabbit.wav')
-print(np.fft.fft(getWaveform()))
-print(len(np.fft.fft(getWaveform())))
+# array, freq = getWaveform()
 
+sampFreq, snd = wav.read('Music Sample/ShortRabbit.wav')
+snd = snd / (2.**15)
+s1 = snd[:, 0]
+timeArray = arange(0, 475120, 1)
+timeArray = timeArray / sampFreq
+timeArray = timeArray * 1000
 
+# plt.plot(timeArray, s1, color='k')
+# ylabel('Amplitude')
+# xlabel('Time (ms)')
+# plt.show()
 
+n = len(s1)
+p = np.fft.fft(s1)
 
+nUniquePts = int(ceil((n+1)/2.0))
+p = p[0:nUniquePts]
+p = abs(p)
 
+p = p / float(n) # scale by the number of points so that
+                 # the magnitude does not depend on the length
+                 # of the signal or on its sampling frequency
+p = p**2  # square it to get the power
+
+# multiply by two (see technical document for details)
+# odd nfft excludes Nyquist point
+if n % 2 > 0: # we've got odd number of points fft
+    p[1:len(p)] = p[1:len(p)] * 2
+else:
+    p[1:len(p) -1] = p[1:len(p) - 1] * 2 # we've got even number of points fft
+
+freqArray = arange(0, nUniquePts, 1.0) * (sampFreq / n);
+plt.plot(freqArray/1000, 10*log10(p), color='k')
+xlabel('Frequency (kHz)')
+ylabel('Power (dB)')
+plt.show()
 
