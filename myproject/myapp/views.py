@@ -32,4 +32,15 @@ def list(request):
     )
 
 def result(request):
-    return render(request, 'result.html')
+    def getOriginalWav():
+        savefig(original)
+    def getRecordingWav():
+        savefig(recording)
+    def getMixedWav():
+        savefig(mixed)
+    def score:
+        savefig()
+        
+    return render(request, 'result.html',
+        {'original': original, 'recording': recording, 'score': score 
+    })
