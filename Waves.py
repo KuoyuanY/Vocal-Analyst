@@ -293,4 +293,4 @@ def compareAudio(Expected, Record):
 # Voice = testGraph('Music Sample/Moves-Full.wav', 'Music Sample/Moves.wav')
 # wav.write('Bruno.wav', 44100, Voice)
 
-print(compareAudio('Music Sample/MovesK.wav', 'Music Sample/MovesA.wav'))
+print(compareAudio('Music Sample/MovesS.wav', 'Music Sample/MovesK.wav'))
