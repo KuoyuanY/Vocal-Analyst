@@ -15,7 +15,7 @@
         {% endfor %}
         </ul>
         {% endif %}
-        <div id="filebutton">
+        <div class="filebutton">
           <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <p>{{ form.non_field_errors }}</p>
@@ -29,16 +29,41 @@
 
             <p><input type="submit" value="Upload"/></p>
           </form>
-        </div>
+       </div>
         </center>
     </body>
-    <style>
+    
+    <style type="text/css">
+      body {
+      background-color: powderblue;
+      }
       .filebutton {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    }  
+      }
     </style>
+    <img src="i630.photobucket.com/albums/uu26/russtech/Loading.gif" alt="Loading" height="42" width="84"/> 
+    <script>
+      function load('result.html') {
+      // display loading image here...
+      document.getElementById('loading.gif').visible = true;
+      // request your data...
+      var req = new XMLHttpRequest();
+      req.open("POST", 'result.html', true);
+
+      req.onreadystatechange = function () {
+      if (req.readyState == 4 && req.status == 200) {
+      // content is loaded...hide the gif and display the content...
+      if (req.responseText) {
+      document.getElementById('content').innerHTML = req.responseText;
+      document.getElementById('loading.gif').visible = false;
+      }
+      }
+      };
+      request.send(vars);
+      }
+    </script>
 </html>
