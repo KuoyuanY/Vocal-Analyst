@@ -2,7 +2,7 @@
 from django.conf.urls import url
 from myproject.myapp.views import list
 
+
 urlpatterns = [
     url(r'^list/$', list, name='list')
-    url(r'^result/$', view.result, name='result')
 ]
